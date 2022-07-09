@@ -1,12 +1,9 @@
-FROM node:latest
+FROM ubuntu
+MAINTAINER Anjaly
+RUN apt-get update && apt-getinstall nginx -y
 
-WORKDIR /usr/src/app
+WORKDIR /var/www/html/
 
-COPY package*.json ./
+ADD . .
 
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD [“echo”,”Image created”] 
