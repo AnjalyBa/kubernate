@@ -1,9 +1,6 @@
 FROM ubuntu
-MAINTAINER Anjaly
-RUN apt-get update && apt-getinstall nginx -y
-
-WORKDIR /var/www/html/
-
+MAINTAINER anjaly
+RUN apt-get update && apt-get install -y nginx
+WORKDIR /var/www/html
 ADD . .
-
-CMD [“echo”,”Image created”] 
+CMD ["sleep", "infinity"]
