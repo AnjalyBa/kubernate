@@ -16,8 +16,8 @@ pipeline {
     stage('build and tag'){
         steps{
             script {
-            sh ' docker build -t kubernate:latest .'
-            sh 'docker tag kubernate:latest anjalyb/kubernatesproject:$BUILD_NUMBER'
+            sh ' docker build -t kubernate/dockerfile:latest .'
+            sh 'docker tag kubernate/dockerfile:latest anjalyb/kubernatesproject:$BUILD_NUMBER'
             }
             
         }
