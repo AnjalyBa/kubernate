@@ -9,7 +9,7 @@ pipeline {
         stage('gitclone') {
 
 			steps {
-				git 'https://github.com/AnjalyBa/kubernate.git'
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-jenk', url: 'https://github.com/AnjalyBa/kubernate.git']]])
                 
             }
         }
